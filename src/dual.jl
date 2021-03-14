@@ -11,7 +11,7 @@ Dual. By default, only `<:Real` types are allowed.
 can_dual(::Type{<:Real}) = true
 can_dual(::Type) = false
 
-struct Dual{T,V,N} <: Real
+struct Dual{T,V,N} <: V
     value::V
     partials::Partials{N,V}
     function Dual{T, V, N}(value::V, partials::Partials{N, V}) where {T, V, N}
